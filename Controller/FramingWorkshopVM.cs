@@ -22,7 +22,7 @@ namespace FramingWorkshop.Controller
         {
             get { return frames; }
         }
-        
+
         public IEnumerable<Cardboard> Cardboards
         {
             get { return cardboards; }

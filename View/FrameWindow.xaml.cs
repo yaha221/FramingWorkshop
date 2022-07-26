@@ -26,5 +26,10 @@ namespace FramingWorkshop.View
             Frame = f;
             this.DataContext = new FrameVM();
         }
+        public FrameWindow()
+        {
+            InitializeComponent();
+            this.DataContext = new FrameVM();
+        }
     }
 }

@@ -25,8 +25,10 @@
         </ListBox>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="Добавить" Margin="10" Command="{Binding AddCommand}" />
-            <Button Content="Изменить" Margin="10" Command="{Binding EditCommand}"  />
-            <Button Content="Удалить" Margin="10" Command="{Binding DeleteCommand}"  />
+            <Button Content="Изменить" Margin="10" Command="{Binding EditCommand}" 
+                     CommandParameter="{Binding ElementName=framesList, Path=SelectedItem}" />
+            <Button Content="Удалить" Margin="10" Command="{Binding DeleteCommand}" 
+                    CommandParameter="{Binding ElementName=framesList, Path=SelectedItem}"/>
         </StackPanel>
     </Grid>
 </Window>

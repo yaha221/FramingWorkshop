@@ -12,39 +12,39 @@ namespace FramingWorkshop.Controller
     public class FramingWorkshopVM:INotifyPropertyChanged
     {
         FramingWorkshopContext db;
-        IEnumerable<Frame> frames;
-        IEnumerable<Cardboard> cardboards;
-        IEnumerable<Hanger> hangers;
-        IEnumerable<Periphery> peripheries;
+        //IEnumerable<Frame> frames;
+        //IEnumerable<Cardboard> cardboards;
+        //IEnumerable<Hanger> hangers;
+        //IEnumerable<Periphery> peripheries;
         RelayCommand frameEditorCommand;
 
-        public IEnumerable<Frame> Frames
-        {
-            get { return frames; }
-        }
+        //public IEnumerable<Frame> Frames
+        //{
+        //    get { return frames; }
+        //}
 
-        public IEnumerable<Cardboard> Cardboards
-        {
-            get { return cardboards; }
-        }
+        //public IEnumerable<Cardboard> Cardboards
+        //{
+        //    get { return cardboards; }
+        //}
 
-        public IEnumerable<Hanger> Hangers
-        {
-            get { return hangers; }
-        }
+        //public IEnumerable<Hanger> Hangers
+        //{
+        //    get { return hangers; }
+        //}
 
-        public IEnumerable<Periphery> Peripheries
-        {
-            get { return peripheries; }
-        }
+        //public IEnumerable<Periphery> Peripheries
+        //{
+        //    get { return peripheries; }
+        //}
 
         public FramingWorkshopVM()
         {
             db = new FramingWorkshopContext();
             db.Frames.Load();
-            db.Hangers.Load();
-            db.Cardboards.Load();
-            db.Peripheries.Load();
+            //db.Hangers.Load();
+            //db.Cardboards.Load();
+            //db.Peripheries.Load();
 
         }
 
@@ -53,8 +53,10 @@ namespace FramingWorkshop.Controller
             get
             {
                 return frameEditorCommand ??
-                    (frameEditorCommand = new RelayCommand(o => {
-                        FrameWindow frameWindow = new FrameWindow(new Frame());
+                    (frameEditorCommand = new RelayCommand(o => 
+                    {
+                        FrameWindow frameWindow = new FrameWindow();
+                        frameWindow.Show();
                     }));        
             }
         }

@@ -111,6 +111,7 @@
     <Compile Include="Controller\FrameVM.cs" />
     <Compile Include="Controller\FramingWorkshopVM.cs" />
     <Compile Include="Controller\RelayCommand.cs" />
+    <Compile Include="Controller\ViewModel.cs" />
     <Compile Include="Models\Cardboard.cs" />
     <Compile Include="Models\Frame.cs" />
     <Compile Include="Models\FramingWorkshopContext.cs" />

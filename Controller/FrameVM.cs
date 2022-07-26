@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace FramingWorkshop
 {
-    public class FrameVM:INotifyPropertyChanged
+    internal class FrameVM:ViewModel
     {
         FramingWorkshopContext db;
         RelayCommand addCommand;
@@ -20,11 +20,8 @@ namespace FramingWorkshop
         public IEnumerable<Frame> Frames
         {
             get { return frames; }
-            set
-            {
-                frames = value;
-                OnPropertyChanged("Frames");
-            }
+            set => Set(ref frames, value);
+
         }
 
         public FrameVM()
@@ -101,11 +98,5 @@ namespace FramingWorkshop
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
     }
 }

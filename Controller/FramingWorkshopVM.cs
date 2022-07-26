@@ -1,15 +1,10 @@
-﻿using System;
-using FramingWorkshop.Models;
-using FramingWorkshop.Controller;
+﻿using FramingWorkshop.Models;
 using FramingWorkshop.View;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data.Entity;
-using System.Runtime.CompilerServices;
 
 namespace FramingWorkshop.Controller
 {
-    public class FramingWorkshopVM:INotifyPropertyChanged
+    internal class FramingWorkshopVM:ViewModel
     {
         FramingWorkshopContext db;
         //IEnumerable<Frame> frames;
@@ -59,13 +54,6 @@ namespace FramingWorkshop.Controller
                         frameWindow.Show();
                     }));        
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

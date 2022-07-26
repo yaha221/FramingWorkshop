@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using FramingWorkshop.Controller;
 
 namespace FramingWorkshop.Models
 {
     // Сущность "Картон"
-    public class Cardboard:INotifyPropertyChanged
+    internal class Cardboard:ViewModel
     {
         private float dense;
         private float price;
@@ -18,30 +13,14 @@ namespace FramingWorkshop.Models
         public float Dense
         {
             get { return dense; }
-            set
-            {
-                dense = value;
-                OnPropertyChanged("Dense");
-            }
+            set => Set(ref dense, value);
+
         }
 
         public float Price
         {
             get { return price; }
-            set
-            {
-                price = value;
-                OnPropertyChanged("PriceCB");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
+            set => Set(ref price, value);
         }
     }
 }

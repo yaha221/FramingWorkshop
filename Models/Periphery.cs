@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using FramingWorkshop.Controller;
 
 namespace FramingWorkshop.Models
 {
     // Сущность "Переферия" (стекло,лепестки,скобы)
-    public class Periphery :INotifyPropertyChanged
+    internal class Periphery : ViewModel
     {
         private string title;
         private double price;
@@ -18,30 +13,13 @@ namespace FramingWorkshop.Models
         public string Title
         {
             get { return title; }
-            set
-            {
-                title = value;
-                OnPropertyChanged("TitleP");
-            }
+            set => Set(ref title, value);
         }
 
         public double Price
         {
             get { return price; }
-            set
-            {
-                price = value;
-                OnPropertyChanged("PriceP");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
-        }
+            set => Set(ref price, value);            
+        }       
     }
 }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using FramingWorkshop.Controller;
 
 namespace FramingWorkshop
 {
     // Сущность "Багет"
-    public class Frame :INotifyPropertyChanged
+    internal class Frame :ViewModel
     {
         private string title;
         private float correction;
@@ -20,50 +15,28 @@ namespace FramingWorkshop
         public string Title
         {
             get { return title; }
-            set
-            {
-                title = value;
-                OnPropertyChanged("Title");
-            }
+            set => Set(ref title, value);
+
         }
 
         public float Correction
         {
             get { return correction; }
-            set
-            {
-                correction = value;
-                OnPropertyChanged("Correction");
-            }        
+            set => Set(ref correction, value);      
         }
 
         public float Price
         {
             get { return price; }
-            set
-            {
-                price = value;
-                OnPropertyChanged("Price");
-            }
+            set => Set(ref price, value);
+
         }
 
         public  int AmountClip
         {
             get { return amountClip; }
-            set
-            {
-                amountClip = value;
-                OnPropertyChanged("AmountClip");
-            }
-        }
+            set => Set(ref amountClip, value);
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-            }
         }
     }
 }

@@ -19,14 +19,14 @@ namespace FramingWorkshop.View
     /// </summary>
     public partial class FrameWindow : Window
     {   
-        public Frame Frame { get; private set; }
-        public FrameWindow(Frame f)
+        internal Frame Frame { get; private set; }
+        internal FrameWindow(Frame f)
         {
             InitializeComponent();
             Frame = f;
             this.DataContext = new FrameVM();
         }
-        public FrameWindow()
+        internal FrameWindow()
         {
             InitializeComponent();
             this.DataContext = new FrameVM();

@@ -5,28 +5,40 @@ namespace FramingWorkshop.Models
     // Сущность "Подвесы"
     internal class Hanger :ViewModel
     {
+
+        internal int Id { get; set; }
+
+        #region Название подвеса
+
         private string title;
-        private float price;
-        private int screws;
-
-        public int Id { get; set; }
-
-        public string Title
+        /// <summary>Название подвеса</summary>
+        internal string Title
         {
             get { return title; }
             set => Set(ref title, value);
         }
+        #endregion
 
-        public float Price
+        #region Цена подвеса
+
+        private float price;
+        /// <summary>Цена подвеса</summary>
+        internal float Price
         {
             get { return price; }
             set => Set(ref price, value);
         }
+        #endregion
 
-        public int Screws
+        #region Кол-во шурупов на подвес
+
+        private int screws;
+        /// <summary>Кол-во шурупов на подвес</summary>
+        internal int Screws
         {
             get { return screws; }
             set => Set(ref screws, value);
         }        
+        #endregion
     }
 }

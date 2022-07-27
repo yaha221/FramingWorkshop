@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace FramingWorkshop.Models
 {
-    public class FramingWorkshopContext : DbContext
+    /// <summary> Контекст данных приложения Framing Worckshop </summary>
+    internal class FramingWorkshopContext : DbContext
     {
-        public FramingWorkshopContext() : base("DeafultConnection") { }
-        public DbSet<Frame> Frames { get; set; }
-        public DbSet<Cardboard> Cardboards { get; set; }
-        public DbSet<Hanger> Hangers { get; set; }
-        public DbSet<Periphery> Peripheries { get; set; }
+        internal FramingWorkshopContext() : base("DefaultConnection") { }
+        internal DbSet<Frame> Frames { get; set; }
+        internal DbSet<Cardboard> Cardboards { get; set; }
+        internal DbSet<Hanger> Hangers { get; set; }
+        internal DbSet<Periphery> Peripheries { get; set; }
+
     }
 }

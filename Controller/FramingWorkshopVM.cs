@@ -1,22 +1,16 @@
 ﻿using FramingWorkshop.Models;
 using FramingWorkshop.View;
+using System.Collections.Generic;
 using System.Data.Entity;
 
 namespace FramingWorkshop.Controller
 {
-    internal class FramingWorkshopVM:ViewModel
+    internal class FramingWorkshopVM : ViewModel
     {
-        FramingWorkshopContext db;
-        //IEnumerable<Frame> frames;
         //IEnumerable<Cardboard> cardboards;
         //IEnumerable<Hanger> hangers;
         //IEnumerable<Periphery> peripheries;
-        RelayCommand frameEditorCommand;
 
-        //public IEnumerable<Frame> Frames
-        //{
-        //    get { return frames; }
-        //}
 
         //public IEnumerable<Cardboard> Cardboards
         //{
@@ -32,8 +26,21 @@ namespace FramingWorkshop.Controller
         //{
         //    get { return peripheries; }
         //}
+        #region Сущность "Багет"
 
-        public FramingWorkshopVM()
+        //internal IEnumerable<Frame> frames;
+        ///// <summary>Сущность "Багет"</summary>
+        //internal IEnumerable<Frame> Frames
+        //{
+        //    get { return frames; }
+        //    set => Set(ref frames, value);
+        //}
+        #endregion
+
+        #region Команда загрузки сущности "Багет" из БД
+
+        private readonly FramingWorkshopContext db;
+        internal FramingWorkshopVM()
         {
             db = new FramingWorkshopContext();
             db.Frames.Load();
@@ -42,18 +49,17 @@ namespace FramingWorkshop.Controller
             //db.Peripheries.Load();
 
         }
+        #endregion
 
-        public RelayCommand FrameEditorCommand
-        {
-            get
-            {
-                return frameEditorCommand ??
-                    (frameEditorCommand = new RelayCommand(o => 
+        #region Команда вызова окна редактирования сущности "Багет"
+
+        private RelayCommand frameEditorCommand;
+        public RelayCommand FrameEditorCommand => frameEditorCommand ??
+                    (frameEditorCommand = new RelayCommand(o =>
                     {
                         FrameWindow frameWindow = new FrameWindow();
                         frameWindow.Show();
-                    }));        
-            }
-        }
+                    }));
+        #endregion
     }
 }

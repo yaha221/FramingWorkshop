@@ -11,26 +11,32 @@ namespace FramingWorkshop
 {
     internal class FrameVM:ViewModel
     {
-        FramingWorkshopContext db;
-        RelayCommand addCommand;
-        RelayCommand editCommand;
-        RelayCommand deletCommand;
-        IEnumerable<Frame> frames;
+        #region Багет
 
+        IEnumerable<Frame> frames;
+        /// <summary> Багет </summary>
         public IEnumerable<Frame> Frames
         {
             get { return frames; }
             set => Set(ref frames, value);
 
         }
+        #endregion
 
+        #region Загрузка сущности "Багет" из БД
+
+        FramingWorkshopContext db;
         public FrameVM()
         {
             db = new FramingWorkshopContext();
-            db.Frames.Load();
-            Frames = db.Frames.Local.ToBindingList();
+            //db.Frames.Load();
+            //Frames = db.Frames.Local.ToBindingList();
         }
+        #endregion
 
+        #region Команда добавления багета в БД
+
+        RelayCommand addCommand;
         public RelayCommand AddCommand
         {
             get 
@@ -48,7 +54,11 @@ namespace FramingWorkshop
                     }));
             }
         }
+        #endregion
 
+        #region Команда редактирования багета
+
+        RelayCommand editCommand;
         public RelayCommand EditCommand
         {
             get
@@ -82,7 +92,11 @@ namespace FramingWorkshop
                     }));
             }
         }
+        #endregion
 
+        #region Команда удаления багета из БД
+
+        RelayCommand deletCommand;
         public RelayCommand DeleteCommand
         {
             get
@@ -97,6 +111,7 @@ namespace FramingWorkshop
                     }));
             }
         }
+        #endregion
 
     }
 }

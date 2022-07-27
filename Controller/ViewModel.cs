@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace FramingWorkshop.Controller
 {
+    /// <summary> Класс реализующий интерфейс INotifyPropertyChanged </summary>
     internal abstract class ViewModel:INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

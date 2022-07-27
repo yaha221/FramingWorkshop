@@ -6,6 +6,7 @@ using System.Windows.Input;
 
 namespace FramingWorkshop.Controller
 {
+    /// <summary> Класс реализующий интерфейс ICommand </summary>
     public class RelayCommand:ICommand
     {
         private Action<object> execute;

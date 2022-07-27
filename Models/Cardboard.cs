@@ -5,22 +5,29 @@ namespace FramingWorkshop.Models
     // Сущность "Картон"
     internal class Cardboard:ViewModel
     {
+        internal int Id { get; set; }
+
+        #region Толщина багета
+
         private float dense;
-        private float price;
-
-        public int Id { get; set; }
-
-        public float Dense
+        /// <summary> Толщина картона </summary>
+        internal float Dense
         {
             get { return dense; }
             set => Set(ref dense, value);
 
         }
+        #endregion
 
-        public float Price
+        #region Цена картона
+
+        private float price;
+        /// <summary> Цена картона </summary>
+        internal float Price
         {
             get { return price; }
             set => Set(ref price, value);
         }
+        #endregion
     }
 }

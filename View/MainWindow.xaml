@@ -6,6 +6,6 @@
         xmlns:l="clr-namespace:FramingWorkshop" xmlns:controller="clr-namespace:FramingWorkshop.Controller" d:DataContext="{d:DesignInstance Type=controller:FramingWorkshopVM}"
         Title="Расчёт рамки" Height="450" Width="800">
     <Grid>
-        <Button Content="Редактор багета" HorizontalAlignment="Left" Margin="120,334,0,0" VerticalAlignment="Top" Width="118" Command="{Binding Path=FrameEditorCommand}"/>
+        <Button Content="Редактор" Height="20" Width="100" Margin="10,10" Command="{Binding FrameEditorCommand}" />
     </Grid>
 </Window>

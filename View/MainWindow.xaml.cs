@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-
+using FramingWorkshop.Controller;
 
 namespace FramingWorkshop
 {
@@ -11,6 +11,7 @@ namespace FramingWorkshop
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new FramingWorkshopVM();
         }
     }
 }

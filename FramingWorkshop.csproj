@@ -79,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddFrameWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FrameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,14 +95,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controller\AddFrameVM.cs" />
+    <Compile Include="Controller\Commands\Base\Command.cs" />
     <Compile Include="Controller\FrameVM.cs" />
     <Compile Include="Controller\FramingWorkshopVM.cs" />
-    <Compile Include="Controller\RelayCommand.cs" />
+    <Compile Include="Controller\Commands\LambdaCommand.cs" />
     <Compile Include="Controller\ViewModel.cs" />
     <Compile Include="Models\Cardboard.cs" />
     <Compile Include="Models\Frame.cs" />
     <Compile Include="Models\FramingWorkshopContext.cs" />
     <Compile Include="Models\Periphery.cs" />
+    <Compile Include="View\AddFrameWindow.xaml.cs">
+      <DependentUpon>AddFrameWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FrameWindow.xaml.cs">
       <DependentUpon>FrameWindow.xaml</DependentUpon>
     </Compile>
